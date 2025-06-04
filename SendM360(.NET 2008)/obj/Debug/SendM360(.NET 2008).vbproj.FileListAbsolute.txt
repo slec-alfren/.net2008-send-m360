@@ -1,0 +1,33 @@
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\obj\Debug\ResolveAssemblyReference.cache
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.frmSendSMS.resources
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.frmMSS_Login.resources
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.Resources.resources
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).vbproj.GenerateResource.Cache
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\bin\Debug\SendM360(.NET 2008).exe
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\bin\Debug\SendM360(.NET 2008).pdb
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\bin\Debug\SendM360(.NET 2008).xml
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).exe
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).xml
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).pdb
+C:\testlv\SendM360(.NET 2008)\Backup\SendM360(.NET 2008)\bin\Debug\Newtonsoft.Json.dll
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).exe
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).xml
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).pdb
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\bin\Debug\Resources\send.png
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\bin\Debug\Resources\rubber.png
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\bin\Debug\SendM360(.NET 2008).exe.manifest
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\bin\Debug\SendM360(.NET 2008).application
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\bin\Debug\SendM360(.NET 2008).exe
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\bin\Debug\SendM360(.NET 2008).pdb
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\bin\Debug\SendM360(.NET 2008).xml
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\ResolveAssemblyReference.cache
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.frmSendSMS.resources
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.frmMSS_Login.resources
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.Resources.resources
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).vbproj.GenerateResource.Cache
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).exe.manifest
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360(.NET 2008).application
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.frmSendSMS_HR.resources
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.frmMaintenance.resources
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.frmMainMenu.resources
+C:\testlv\SendM360(.NET 2008)\SendM360(.NET 2008)\obj\Debug\SendM360_.NET_2008_.frmMessageLog.resources

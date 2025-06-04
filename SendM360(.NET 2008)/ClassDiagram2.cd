@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SendM360_.NET_2008_.clsConnection" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgAAEAABwAAAEAAMAQCAAACAAAABAAQCCAAAQgIIAA=</HashCode>
+      <FileName>clsConnection.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendM360_.NET_2008_.clsListviewSorter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>clsListviewSorter.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SendM360_.NET_2008_.clsPersonMessage" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAACAAgAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>clsPersonMessage.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendM360_.NET_2008_.frmMainMenu" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAICAAAAAAAACAABACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmMainMenu.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendM360_.NET_2008_.frmMaintenance" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iEAEQMCQmiBAAAIAQPKHiQiSAAIKQEkjAEAUCBBwAAI=</HashCode>
+      <FileName>frmMaintenance.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendM360_.NET_2008_.frmMessageLog" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgAAAgEACAgAAAAwD6ACEASAACDCIgBAAAAIAAQAAA=</HashCode>
+      <FileName>frmMessageLog.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendM360_.NET_2008_.frmMSS_Login" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QwghmIBWF6FEkiFgkAqMAMACEDj/BQYBi8EQgEIQAEA=</HashCode>
+      <FileName>frmMSS_Login.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendM360_.NET_2008_.frmSendSMS" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>XSlAASMCkbiCBkqUweazfTKOA/aosBfCO3B0jQBQQGY=</HashCode>
+      <FileName>frmSendSMS.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendM360_.NET_2008_.frmSendSMS_HR" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BKhABaOC0aiACAIA4f63SXI6AJL/gJvLA1h0AEhQACY=</HashCode>
+      <FileName>frmSendSMS_HR.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendM360_.NET_2008_.My.MyApplication" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SendM360_.NET_2008_.My.MySettings" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAABAAIAAABAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Module Name="SendM360_.NET_2008_.modMain" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAEAAAAEAAAAIAAAAgAAAAEAAAAABAAAAAQAA=</HashCode>
+      <FileName>modMain.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="SendM360_.NET_2008_.My.MySettingsProperty" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="SendM360_.NET_2008_.My.Resources.Resources" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAABEAAAgQAAAAAABAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
