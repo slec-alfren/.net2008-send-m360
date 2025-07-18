@@ -20,6 +20,7 @@ Public Class frmSendSMS
     Dim mvFirstName As String
     Dim mvitem As New ListView 'Ely @ 05292025
     Dim lvperson As New clsPersonMessage() 'Ely @ 05292025
+    Dim mvPatSex As String 'Ely @ 06102025
 
     'api_url: https://api.m360.com.ph/v3/api/broadcast
 
@@ -490,7 +491,6 @@ Public Class frmSendSMS
 
             If result = DialogResult.Yes Then
 
-
                 Dim itemCount As Integer = lvReceiver.Items.Count
                 ToolStripProgressBar1.Maximum = lvReceiver.Items.Count
                 ToolStripProgressBar1.Visible = True
@@ -500,7 +500,7 @@ Public Class frmSendSMS
                 Dim i As Integer = 1
                 'For Each item As ListViewItem In lvReceiver.Items
                 For Each lvitem As ListViewItem In mvitem.Items
-                    lvperson = CType(mvitem.Tag, clsPersonMessage)
+                    'lvperson = CType(mvitem.Tag, clsPersonMessage)
                     ToolStripProgressBar1.Value = i
                     'Application.DoEvents()
                     'For index As Integer = 0 To item.SubItems.Count - 1
@@ -574,8 +574,8 @@ Public Class frmSendSMS
             txtPDSNO.CharacterCasing = CharacterCasing.Upper
             txtSurname.CharacterCasing = CharacterCasing.Upper
             chkLocked.Checked = True
-            txtSurname.Enabled = False
-            txtContactno.Enabled = False
+            txtSurname.Enabled = True
+            txtContactno.Enabled = True
             grpSpecial.Visible = True
             grpSpecial.Enabled = True
             Me.Width = 818 'Ely @ 05292025
@@ -607,29 +607,36 @@ Public Class frmSendSMS
                 txtSurname.Enabled = True
                 txtContactno.Enabled = True
             Else
-                grpSpecial.Visible = False
+                grpSpecial.Visible = True
                 grpSpecial.Enabled = False
                 txtSurname.Enabled = False
                 txtContactno.Enabled = False
             End If
 
             'Me.ShowInTaskbar = True
-            If CheckAccess(mvEmphash) = False Then
+            If GetEmphash(mvEmphash) = False Then
                 lblPDSNO.Visible = True
                 chkLocked.Checked = False
                 chkLocked.Visible = False
-                ToolStripLabel2.Visible = False
-                ToolStripLabel2.Enabled = False
                 chkLocked.Checked = True
+                If mvEmphash = "00348" Then 'Allow Mam marj to access maintenance
+                    ToolStripLabel2.Visible = True
+                    ToolStripLabel2.Enabled = True
+                    chkLocked.Visible = True
+                Else
+                    ToolStripLabel2.Visible = False
+                    ToolStripLabel2.Enabled = False
+                End If
                 Exit Sub
             Else
                 lblPDSNO.Visible = False
-                chkLocked.Checked = True
                 chkLocked.Visible = True
                 ToolStripLabel2.Visible = True
                 ToolStripLabel2.Enabled = True
                 chkLocked.Checked = False
             End If
+
+            
             mvitem.Items.Clear()
 
         Catch ex As Exception
@@ -652,12 +659,25 @@ Public Class frmSendSMS
                 '00278 - Nielmhar R. Calixton, MR.
                 '00790 - ALFREN JAMES CABUQUIT                                                                               
                 '00700 - Ely 
+                '00262
                 If Trim(.Fields("emphash").Value.ToString) = "00348" Or _
                    Trim(.Fields("emphash").Value.ToString) = "00178" Or _
                    Trim(.Fields("emphash").Value.ToString) = "00075" Or _
                    Trim(.Fields("emphash").Value.ToString) = "00278" Or _
                    Trim(.Fields("emphash").Value.ToString) = "00790" Or _
-                   Trim(.Fields("emphash").Value.ToString) = "00700" Then
+                   Trim(.Fields("emphash").Value.ToString) = "00700" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00014" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00204" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00160" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00353" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00073" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00303" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00130" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00220" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00289" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00138" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00262" Or _
+                   Trim(.Fields("emphash").Value.ToString) = "00030" Then
                     GetEmphash = True
                 Else
                     GetEmphash = False
@@ -904,9 +924,11 @@ Public Class frmSendSMS
 
         If chkLocked.Checked = True Then
             lvMessage = cMessage.Replace("[NAME]", GetFirstname(mvEmphash))
+            lvMessage = lvMessage.Replace("[STAFF]", GetStaff(mvEmphash))
             itmx.SubItems.Add(Trim(lvMessage))
         Else
             lvMessage = cMessage.Replace("[NAME]", cFullname)
+            lvMessage = lvMessage.Replace("[STAFF]", GetStaff(mvEmphash))
             itmx.SubItems.Add(Trim(lvMessage))
         End If
         itmx.SubItems.Add(Trim(cboFloor.Text))
@@ -926,9 +948,11 @@ Public Class frmSendSMS
 
         If chkLocked.Checked = True Then
             lvMessage = cMessage.Replace("[NAME]", GetFirstname(mvEmphash))
+            lvMessage = lvMessage.Replace("[STAFF]", GetStaff(mvEmphash))
             itmxy.SubItems.Add(Trim(lvMessage))
         Else
             lvMessage = cMessage.Replace("[NAME]", cFullname)
+            lvMessage = lvMessage.Replace("[STAFF]", GetStaff(mvEmphash))
             itmxy.SubItems.Add(Trim(lvMessage))
         End If
         itmxy.SubItems.Add(Trim(cboFloor.Text))
@@ -941,7 +965,7 @@ Public Class frmSendSMS
         Dim lvSelStr As String
         GetFirstname = ""
 
-        lvSelStr = "Select Trim(PatFname) + Trim(PatLname) as FULLNAME from tbltrans a, tblpatmast b " & _
+        lvSelStr = "Select Trim(PatFname) + Trim(PatLname) as FULLNAME, PatSex from tbltrans a, tblpatmast b " & _
                         "where a.patrefno = b.patrefno " & _
                              " and a.pdsno = '" & Trim(txtPDSNO.Text) & "' "
         cboLocation.Items.Clear()
@@ -950,12 +974,37 @@ Public Class frmSendSMS
             .Open(lvSelStr, con1.gvADODB)
             If Not .EOF Then
                 GetFirstname = Trim(.Fields("FULLNAME").Value.ToString)
+                mvPatSex = Trim(.Fields("Patsex").Value.ToString) 'Ely 06-10-2025
+                If mvPatSex = "M" Then
+                    GetFirstname = "Mr. " & GetFirstname 'Ely 06-10-2025
+                Else
+                    GetFirstname = "Ms. " & GetFirstname 'Ely 06-10-2025
+                End If
             End If
         End With
         con1.ConClose()
 
     End Function
 
+
+    Private Function GetStaff(ByVal cEmphash As String) As String
+        Dim rsGetFirstname As New ADODB.Recordset
+        Dim lvSelStr As String
+        GetStaff = ""
+
+        lvSelStr = "Select Trim(Firstname) as Firstname from _tblemployees " & _
+                        "where EmpHash = '" & Trim(cEmphash) & "' "
+        'cboLocation.Items.Clear()
+        con1.ConOpen()
+        With rsGetFirstname
+            .Open(lvSelStr, con1.gvADODB)
+            If Not .EOF Then
+                GetStaff = Trim(.Fields("Firstname").Value.ToString)
+            End If
+        End With
+        con1.ConClose()
+
+    End Function
 
     Private Sub btnRemoveAll_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRemoveAll.Click
 
@@ -983,8 +1032,25 @@ Public Class frmSendSMS
 
     Private Sub RemoveToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemoveToolStripMenuItem.Click
         If lvReceiver.SelectedItems.Count > 0 Then
-            lvReceiver.Items.Remove(lvReceiver.SelectedItems(0))
+            ' Get selected item in lvReceiver
+            Dim itmx As ListViewItem = lvReceiver.SelectedItems(0)
+
+            ' Get the name to match
+            Dim name As String = itmx.SubItems(1).Text
+
+            ' Remove from lvReceiver
+            lvReceiver.Items.Remove(itmx)
             lblcountReceiver.Text = Val(lblcountReceiver.Text) - 1
+            'For Each itmxy As ListViewItem In mvitem.Items
+            '    MsgBox("mvitem SubItem(1): " & itmxy.SubItems(1).Text)
+            'Next
+            ' Find and remove matching item from mvitem by name
+            For Each itmxy As ListViewItem In mvitem.Items
+                If itmxy.SubItems(1).Text = name Then
+                    mvitem.Items.Remove(itmxy)
+                    Exit For
+                End If
+            Next
         End If
     End Sub
 
@@ -1209,6 +1275,12 @@ Public Class frmSendSMS
         frmMessageLog.ShowDialog()
     End Sub
 
+    Private Sub txtMessage_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtMessage.KeyDown
+        If e.KeyCode = Keys.Back Then
+            e.SuppressKeyPress = True ' This prevents the Backspace from deleting text
+        End If
+    End Sub
+
     Private Sub txtMessage_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMessage.KeyPress
         e.Handled = True
     End Sub
@@ -1283,19 +1355,4 @@ Public Class frmSendSMS
     End Sub
 
 
-    Private Sub txtSurname_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSurname.TextChanged
-
-    End Sub
-
-    Private Sub txtContactno_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtContactno.TextChanged
-
-    End Sub
-
-    Private Sub lblPDSNO_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblPDSNO.Click
-
-    End Sub
-
-    Private Sub chkLocked_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkLocked.CheckedChanged
-
-    End Sub
 End Class

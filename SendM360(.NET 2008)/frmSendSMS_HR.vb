@@ -136,7 +136,7 @@ Public Class frmSendSMS_HR
             rsFilldata = New ADODB.Recordset
             con2.ConDBConnopen()
             With rsFilldata
-                .Open(lvSelStr, con2.gvDBConn)
+                .Open(lvSelStr, con2.gvDBConn_DBSLEC)
                 If Not .EOF Then
                     If Trim(.Fields("Gender").Value.ToString) = "Male" Then
                         lvPre = "Mr. "
@@ -773,6 +773,10 @@ Public Class frmSendSMS_HR
     End Sub
 
     Private Sub txtDescription_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDescription.TextChanged
+
+    End Sub
+
+    Private Sub txtPDSNO_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPDSNO.TextChanged
 
     End Sub
 End Class

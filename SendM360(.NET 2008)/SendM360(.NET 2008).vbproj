@@ -38,8 +38,8 @@
     <UpdateUrl>\\AD12SVR\Deployment\SLEC-SendM360\INSTALLER\</UpdateUrl>
     <ProductName>SLEC-SendM360%28.NET 2008%29</ProductName>
     <PublisherName>SLEC Medical Screening System</PublisherName>
-    <MinimumRequiredVersion>1.0.0.24</MinimumRequiredVersion>
-    <ApplicationRevision>25</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.33</MinimumRequiredVersion>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -237,20 +237,20 @@
   <ItemGroup>
     <PublishFile Include="ADODB">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Newtonsoft.Json">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
